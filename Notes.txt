@@ -1,0 +1,89 @@
+Was Ich noch brauche:
+	- Artist (Textures)
+	- Artist (Models-Armor)
+	- Artist (Models-Items)
+
+Models werden benötigt für:
+	- Alle Waffen
+	- Helm
+	- Tornister
+	- Support Kapsel
+	- Mecha Hitler
+	- Das Ding
+
+CoroUtil:
+	Klassen, welche gebraucht werden:
+		- UtilEntityBuffs
+		- EntityAINearestAttackablePlayerOmniscience
+		- EntityAIChaseFromFar
+OnSlaught:
+	AI kann hiervon übernommen werden.
+	Benötigte:
+		- AntiAir
+		- AttackMelee
+		- ChaseLongDistance
+		- ChaseLongDistanceFlying
+		- CounterAttack
+		- ExplodeWhenStuck
+		- Lunge
+		- Mining
+		- PlayerTarget
+
+AI Tasks: 
+	- "Klasse" wird beim Spawn festgelegt, dies bestimmt die Tasks und die Models sowie die Texturen und das Equipment
+
+Waffen: 
+	- Handgranate
+	- MG
+	- Minigun (nur Bosse)
+	- Ballistisches Schild
+	- Laser-MG
+	- Laser-Minigun
+	- Raketenwerfer
+	- Granatenwerfer
+	- Medic Koffer
+	
+	Munition: Gewehrkugeln + Energiezellen (sind quasi Munitionskisten, haben Haltbarkeit), werden nur für Spieler gebraucht
+
+Rüstungen: 
+	- Helm
+	- Brustpanzer mit Tornister
+	- Hose
+	- Springerstiefel 
+	
+	Siehe Hellsing Ultimate Nazi-Vampire
+
+Mobs:
+	Wenn Mobs sterben, bleiben die Leichen zu einem bestimmten Prozentsatz liegen
+
+	Mobs haben ein Level (Wellen abhängig), dieses bestimmt seine Resistenzen, Modell, Stärke, Ausrüstung und HP
+
+	Mobs spawnen indem sie sich aus dem Boden graben
+	
+	Alle Explosionen haben "Physik" (siehe Gungame)
+
+	Standard:
+		- SS Soldat => Zombie/Skelett/Normal mit MG oder Granaten, kann auch ab höherem Level ein Schild oder zweites MG haben
+		- Arbeiter => Soldat mit Bohrer => Baut Blöcke ab
+		- Zombie => spawnt von Leichen
+		- Medic => heilt andere Mobs, kann bei Angriff Support rufen => spawnt Support Kapsel
+		- Drohne => klein & nervig, fliegt herum und schießt auf Spieler. Gibt 3 Arten: MG, Laser, Raketenwerfer
+	Spezial:
+		- Raketensoldat => Zombie mit Raketenwerfer
+		- Ingenieur => Konstruiert Mörser und mountet diese, kann auch Brücken bauen => siehe Invmod
+		- Nazi Vampir => Siehe Hellsing Ultimate Vampire, belebt Leichen wieder und kann sich teleportieren
+		- Support Kapsel => Fällt vom Himmel und spawnt mehr Mobs (nur Standard Mobs)
+		- Schütze => Spawnt in der Nähe von Mörsern und kann diese mounten, dieser bestimmt lediglich das Ziel des Mörsers
+		- Mörser => Schwerkalibergeschütz, nimmt nur durch Explosionen und Laser schaden, wird durch Ingenieur gesetzt. Wird nach Fall zerstört
+	Bosse:
+		- Mecha Hitler
+			> Steigert sich von 2 MG's -> 4 MG's -> 2 Laser -> 2 Laser + 2 Granatenwerfer
+			> Waffen sind nicht teil des Modells
+			> Hat zusätzlichen Raketenwerfer auf der Schulter (eigenes Entity)
+			> Umkreist den Spieler
+			> Beim Tod spawnt es einen kleinen Hitler welcher panisch davon läuft
+		- Das Ding hier: https://sketchfab.com/3d-models/thomas-the-tank-engine-fc56fe7cdab945d3bc5fc0517522d832
+			> Im Prinzip einfach ein Panzer
+			> Umkreist den Spieler
+			> Schießt mit MG
+			> Springt auf Gegner zu und erzeugt Explosion
